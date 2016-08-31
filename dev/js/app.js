@@ -47,7 +47,6 @@ class App extends Component {
                     let photoUrl = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
                     this.setState({ imageSrc: photoUrl })
                 }
-                
             }.bind(this));
         }
 
