@@ -2,4 +2,6 @@
 node_modules
 bundle.min.js
 README.md
-npm-debug.log.2859637106
+logs/
+*.log
+npm-debug.log*
