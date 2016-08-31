@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 
-class Contact extends Component {
+class Country extends Component {
     render() {
 
         return(
             <div className="search-list">
-                {this.props.contact.name} {this.props.contact.last}
+                {this.props.country.country}
             </div>
         );
     }
 
 }
 
-export default Contact;
+export default Country;

@@ -27,6 +27,10 @@ module.exports = {
         filename: 'js/bundle.min.js'
     },
     plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin()
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
     ]
 };
