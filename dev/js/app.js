@@ -29,28 +29,22 @@ class App extends Component {
         let topCountry = filteredCountries[0];
         this.setState({ country: topCountry })
         this.setState({ countries: filteredCountries })
-        console.log("COuntries in list ", filteredCountries.length);
         this.getBackgroundImage(topCountry)
     }
 
     getBackgroundImage (topcountry) {
-        console.log("Country to load image for", topcountry)
         if(topcountry) {
             let takeCountry = topcountry.country
-            console.log('Get image')
             let Flickurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=376b144109ffe90065a254606c9aae3d&";
             let tags = "&tags=" + takeCountry;
             let tagmode = "&tagmode=any";
             let jsonFormat = "&format=json&nojsoncallback=1";
             let FinalURL = Flickurl + tags + tagmode + jsonFormat;
-            console.log(FinalURL)
 
             $.getJSON(FinalURL, function(photos) {
                 let photo = photos.photos.photo[0];
-                console.log(photo);
                 if(photo) {
                     let photoUrl = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
-                    console.log("Photo url ", photoUrl)
                     this.setState({ imageSrc: photoUrl })
                 }
                 
